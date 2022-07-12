@@ -52,7 +52,7 @@ Crud of users with authentication, project full stack using framework Php Larave
 
 :heavy_check_mark: Create user;\
 :heavy_check_mark: Read users;\
-:heavy_check_mark: Update users;
+:heavy_check_mark: Update users;\
 :heavy_check_mark: Delete user;
 
 ## :rocket: Technologies ##
