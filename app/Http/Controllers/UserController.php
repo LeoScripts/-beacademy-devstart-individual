@@ -29,10 +29,10 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
-        if($request->image){
+        if($request->avatar){
             $file = $request['avatar'];
             $path = $file->store('profile','public');
-            $data['image'] = $path;
+            $data['avatar'] = $path;
         }
 
 
