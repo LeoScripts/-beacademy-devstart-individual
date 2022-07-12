@@ -47,6 +47,7 @@
 ## :dart: About ##
 
 Crud of users with authentication, project full stack using framework Php Laravel
+- [Requeriments](./challenge.md)
 
 ## :sparkles: Features ##
 
