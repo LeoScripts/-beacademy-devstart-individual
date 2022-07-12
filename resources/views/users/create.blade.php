@@ -1,12 +1,19 @@
 
     <h1 class="bg-dark text-white p-3 mt-5 text-center">Novo Usuario</h1>
 
-
+    @if($errors->any())
+        <div >
+            @foreach($errors->all() as $error)
+                {{ $error }}
+                <br>
+            @endForeach
+        </div>
+    @endIf
 
     <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="avatar" class="form-label">Selecione sua Foto</label>
+            <label for="avatar" class="form-label">Selecione sua Foto ou avatar</label>
             <input type="file" name="avatar" id="avatar" class="form-control form control-md">
         </div>
         <div class="mb-3">
