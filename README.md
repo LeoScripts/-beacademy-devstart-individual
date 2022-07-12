@@ -26,11 +26,10 @@
 
 <!-- Status -->
 
-<!-- <h4 align="center"> 
-	🚧  Beacademy Devstart Individual 🚀 Under construction...  🚧
+<h4 align="center"> 
+	🚧  🚀 Under construction...  🚧
 </h4> 
 
-<hr> -->
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
