@@ -1,10 +1,10 @@
 # Projeto Individual
-- [ ] Criar um CRUD em PHP, utilizando Laravel
-- [ ] O sistema deverá possuir autenticação
-- [ ] Utilizar o banco de dados Mysql para criar uma tabela - de sua preferência, 
-- [ ] com 10 atributos
-- [ ] O CRUD deve conter os métodos de Insert, Update, Delete e Read dessa tabela
-- [ ] As ações deverão ser realizadas através de uma página web, 
-- [ ] o sistema deverá conter um frontend que se comunique com o backend
-- [ ] deve ter pelo menos 30% de testes unitários
-- [ ] deverá ser armazenado no repositório do github
+- [ ] Create a CRUD in PHP using Laravel
+- [ ] The system must have authentication
+- [ ] Use Mysql database to create a table - your preference 
+- [ ] with 10 attributes
+- [ ] The CRUD must contain the Insert, Update, Delete and Read methods of this table
+- [ ] The actions must be carried out through a web page,
+- [ ] the system must contain a frontend that communicates with the backend
+- [ ] must have at least 30% unit tests
+- [ ] should be stored in the github repository
