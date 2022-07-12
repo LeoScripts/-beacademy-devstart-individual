@@ -13,7 +13,7 @@
     <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label for="avatar" class="form-label">Selecione sua Foto</label>
+            <label for="avatar" class="form-label">Selecione sua Foto ou avatar</label>
             <input type="file" name="avatar" id="avatar" class="form-control form control-md">
         </div>
         <div class="mb-3">

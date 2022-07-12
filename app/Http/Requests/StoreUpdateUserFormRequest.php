@@ -26,11 +26,14 @@ class StoreUpdateUserFormRequest extends FormRequest
     {
         $id = $this->id ?? '';
         $rules = [
-            'avatar' => 'required|file|mine:jpeg,jpg,web,png,svg,pnp',
+            'avatar' => [
+                'required',
+                'file'
+            ],
             'name' => 'required|string|max:50|min:3',
             'email' => 'required|email|unique:users,email,{$id},id',
             'cpf' => 'required|string|max:11|min:11',
-            'password' => 'required|string|max:4|min:12',
+            'password' => 'required|string|max:12|min:4',
         ];
 
         return $rules;
