@@ -6,22 +6,22 @@
   <!-- <a href="https://beacademydevstartindividual.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Beacademy Devstart Individual</h1>
+<h1 align="center">Beacademy Devstart Person-System</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/LeoScripts/beacademy-devstart-individual?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/LeoScripts/beacademy-devstart-person-system?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/LeoScripts/beacademy-devstart-individual?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/LeoScripts/beacademy-devstart-person-system?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/LeoScripts/beacademy-devstart-individual?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/LeoScripts/beacademy-devstart-person-system?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/LeoScripts/beacademy-devstart-individual?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/LeoScripts/beacademy-devstart-person-system?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/LeoScripts/beacademy-devstart-individual?color=56BEB8" /> -->
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/LeoScripts/beacademy-devstart-person-system?color=56BEB8" /> -->
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/LeoScripts/beacademy-devstart-individual?color=56BEB8" /> -->
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/LeoScripts/beacademy-devstart-person-system?color=56BEB8" /> -->
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/LeoScripts/beacademy-devstart-individual?color=56BEB8" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/LeoScripts/beacademy-devstart-person-system?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
@@ -72,10 +72,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 
 ```bash
 # Clone this project
-$ git clone https://github.com/LeoScripts/beacademy-devstart-individual
+$ git clone https://github.com/LeoScripts/beacademy-devstart-person-system
 
 # Access
-$ cd beacademy-devstart-individual
+$ cd beacademy-devstart-person-system
 
 # modify file .env.example to .env and insert to credentials with database name in environments
 
