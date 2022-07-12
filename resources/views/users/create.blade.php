@@ -1,7 +1,14 @@
 
     <h1 class="bg-dark text-white p-3 mt-5 text-center">Novo Usuario</h1>
 
-
+    @if($errors->any())
+        <div >
+            @foreach($errors->all() as $error)
+                {{ $error }}
+                <br>
+            @endForeach
+        </div>
+    @endIf
 
     <form action="{{ route('users.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
