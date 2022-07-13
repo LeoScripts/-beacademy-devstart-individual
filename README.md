@@ -46,14 +46,22 @@
 ## :dart: About ##
 
 Crud of users with authentication, project full stack using framework Php Laravel
-- [Requeriments](./challenge.md)
-
 ## :sparkles: Features ##
 
-:heavy_check_mark: Create user;\
-:heavy_check_mark: Read users;\
-:heavy_check_mark: Update users;\
-:heavy_check_mark: Delete user;
+- [X] In PHP using Laravel
+- [ ] Authentication
+- [X] Use Mysql 
+- [X] 10 attributes
+- [X] The CRUD must contain the 
+    - [X] Insert, 
+    - [X] Update, 
+    - [ ] Delete
+    - [ ] Read 
+- [X] Web page,
+- [X] Frontend that communicates with the backend
+- [ ] must have at least 30% unit tests
+- [X] Stored in the github repository
+
 
 ## :rocket: Technologies ##
 
