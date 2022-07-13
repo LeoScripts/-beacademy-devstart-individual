@@ -36,6 +36,24 @@ class StoreUpdateUserFormRequest extends FormRequest
             'password' => 'required|string|max:12|min:4',
         ];
 
+        if($this->method('PUT')){
+            $rules['password'] = [
+                'required',
+                'nullable',
+                'min:4',
+                'max:12'
+            ];
+
+            $rules ['email'] = [
+                'required',
+                'email'
+            ];
+
+            $rules ['avatar'] = [
+
+            ];
+        }
+
         return $rules;
     }
 }
