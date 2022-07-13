@@ -15,7 +15,7 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('users.index');
+        return view('index');
     }
 
     public function create( )
@@ -25,8 +25,6 @@ class UserController extends Controller
 
     public function store(StoreUpdateUserFormRequest $request)
     {
-        // dd($request->all());
-
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
@@ -36,9 +34,28 @@ class UserController extends Controller
             $data['avatar'] = $path;
         }
 
-
         $this->model->create($data);
-
         return redirect()->route('users.create');
+    }
+
+    public function edit($id)
+    {
+        if(!$user = $this->model->find($id))
+            return redirect()->route('users.index');
+
+        return view('users.edit', compact('user'));
+    }
+
+    public function update(StoreUpdateUserFormRequest $request, $id)
+    {
+        if(!$user = $this->model->find($id))
+            return redirect()->route('users.index');
+
+        $data = $request->only('name','email');
+        if($request->password)
+            $data['password'] = bcrypt($request->password);
+
+        $user->update($data);
+        return redirect("/users/{$id}/edit");
     }
 }
