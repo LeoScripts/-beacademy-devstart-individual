@@ -16,7 +16,8 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('index');
+        $users = User::all();
+        return view('users.index', compact('users'));
     }
 
     public function create( )
@@ -30,7 +31,7 @@ class UserController extends Controller
         $data['password'] = bcrypt($request->password);
 
         if(!$request->avatar){
-            $data['avatar'] = 'public/storage/profile/avatar.png';
+            $data['avatar'] = 'profile/avatar.png';
         }else{
             $file = $request['avatar'];
             $path = $file->store('profile','public');
@@ -68,4 +69,5 @@ class UserController extends Controller
         $user->update($data);
         return redirect()->route('users.edit', ['id' => $id]);
     }
+
 }
