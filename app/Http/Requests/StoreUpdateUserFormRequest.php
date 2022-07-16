@@ -49,9 +49,9 @@ class StoreUpdateUserFormRequest extends FormRequest
                 'email'
             ];
 
-            $rules ['avatar'] = [
-
-            ];
+            // $rules ['avatar'] = [
+            //     'nullable'
+            // ];
         }
 
         return $rules;
