@@ -6,7 +6,7 @@
 
 <p>{{ $user->id }}</p>
 <h4>{{ $user->name }}</h4>
-<img class="rounded mx-auto d-block" width="200" src="{{ 'http://localhost:8000/storage/'.$user->avatar }}" alt="">
+<img class="rounded-circle mx-auto d-block p-2" width="200" src="{{ 'http://localhost:8000/storage/'.$user->avatar }}" alt="">
 
 
 <a class="btn btn-warning" href="{{ route('users.edit', $user->id) }}">Editar</a>
