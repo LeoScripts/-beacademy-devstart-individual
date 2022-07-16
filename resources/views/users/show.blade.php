@@ -5,7 +5,7 @@
 
 
 <a href="{{ route('users.edit', $user->id) }}">Editar</a>
-<form action="" method="post">
+<form action="{{ route('users.destroy', $user->id) }}" method="post">
     @method('DELETE')
     @csrf
     <button type="submit">Excluir</button>

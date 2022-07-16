@@ -79,4 +79,16 @@ class UserController extends Controller
         return redirect()->route('users.edit', ['id' => $id]);
     }
 
+    public function destroy($id)
+    {
+        if(!$user = $this->model->find($id)){
+            return redirect()->route('users.index');
+        }
+        $user->delete();
+        Storage::delete('public/'.$user['avatar']);
+
+        return redirect()->route('users.index');
+    }
+
 }
+
