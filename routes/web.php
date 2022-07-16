@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Controller;
 
-Route::get('/', [UserController::class, 'index'])->name('index');
+Route::get('/', [Controller::class, 'index'])->name('index');
 
 Route::get('/users/{id}/edit',[UserController::class, 'edit'])->name('users.edit');
 Route::delete('/users/{id}',[UserController::class, 'destroy'])->name('users.destroy');
