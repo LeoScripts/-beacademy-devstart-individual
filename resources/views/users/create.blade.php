@@ -1,5 +1,7 @@
-
-    <h1 class="bg-dark text-white p-3 mt-5 text-center">Novo Usuario</h1>
+@extends('template.index')
+@section('title', 'Listagem de Usuarios')
+@section('main')
+    <h1 class="text-center">Novo Usuario</h1>
 
     @if($errors->any())
         <div >
@@ -65,3 +67,4 @@
         <button type="submit" class="btn btn-primary">Criar</button>
     </form>
 
+@endSection

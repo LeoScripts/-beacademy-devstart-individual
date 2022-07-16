@@ -1,5 +1,7 @@
-
-<h1 >{{ $user->name }}</h1>
+@extends('template.index')
+@section('title', 'Listagem de Usuarios')
+@section('main')
+<h1 class="text-center">{{ $user->name }}</h1>
 
     @if($errors->any())
         <div >
@@ -64,3 +66,4 @@
 
         <button type="submit" class="btn btn-primary">Atualizar</button>
     </form>
+@endSection
