@@ -13,6 +13,11 @@ class Controller extends BaseController
 
     public function index()
     {
-        return view('index');
+        return view('welcome');
+    }
+
+    public function dashboard()
+    {
+        return view('dashboard');
     }
 }

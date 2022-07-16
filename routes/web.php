@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 
 require __DIR__.'/auth.php';
 
-
-
 Route::middleware(['auth'])->group(function() {
     Route::get('/users/{id}/edit',[UserController::class, 'edit'])->name('users.edit');
     Route::delete('/users/{id}',[UserController::class, 'destroy'])->name('users.destroy');
@@ -16,10 +14,7 @@ Route::middleware(['auth'])->group(function() {
 });
 
 Route::middleware(['auth', 'admin'])->group(function () {
-    // Route::get('/admin', [UserController::class, 'admin'])->name('admin');
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->middleware(['auth'])->name('dashboard');
+    Route::get('/dashboard', [Controller::class, 'index'])->name('dashboard');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
 });
 
@@ -27,5 +22,3 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users/create', [UserController::class, 'store'])->name('users.store');
 Route::get('/', [Controller::class, 'index'])->name('index');
-
-

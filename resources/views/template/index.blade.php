@@ -20,6 +20,7 @@
                 @if(Auth::user()->is_admin == 1)
                     <a class="nav-link" href="{{ route('dashboard') }}">dashboard</a>
                 @endif
+                <a class="nav-link" href="{{ route('users.show', Auth::user()->id) }}">{{ Auth::user()->name }}</a>
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
                     <button type="submit">sair</button>
