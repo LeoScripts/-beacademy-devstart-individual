@@ -56,11 +56,11 @@ Crud of users with authentication, project full stack using framework Php Larave
 - [X] The CRUD must contain the 
     - [X] Insert, 
     - [X] Update, 
-    - [ ] Delete
+    - [X] Delete
     - [X] Read 
 - [X] Web page,
 - [X] Frontend that communicates with the backend
-- [X] must have at least 30% unit tests
+- [ ] must have at least 30% unit tests
 - [X] Stored in the github repository
 
 
