@@ -46,7 +46,6 @@ class UserController extends Controller
             $path = $file->store('profile','public');
             $data['avatar'] = $path;
         }
-
         $this->model->create($data);
         return redirect()->route('users.create');
     }
@@ -65,7 +64,6 @@ class UserController extends Controller
         if(!$user = $this->model->find($id)){
             return redirect()->route('users.index');
         }
-
         if($request->avatar){
             Storage::delete('public/'.$user['avatar']);
             $file = $request['avatar'];
@@ -81,11 +79,12 @@ class UserController extends Controller
 
     public function destroy($id)
     {
-        if(!$user = $this->model->find($id)){
+        if(!$user = $this->model->find($id))
             return redirect()->route('users.index');
-        }
+
         $user->delete();
-        Storage::delete('public/'.$user['avatar']);
+        if($user['avatar'] !== 'profile/avatar.png')
+            Storage::delete('public/'.$user['avatar']);
 
         return redirect()->route('users.index');
     }
