@@ -1,8 +1,17 @@
-<h1>Listagem de Usuarios</h1>
+@extends('template.index')
+@section('title', 'Listagem de Usuarios')
+@section('main')
 
-@foreach($users as $user)
 
-    <h4>{{ $user->name }}</h4>
-    <img width="100" src="{{ 'http://localhost:8000/storage/'.$user->avatar }}" alt="">
+    <h1 class="text-center">Listagem de Usuarios</h1>
 
-@endForeach
+    @foreach($users as $user)
+
+        <h4>{{ $user->name }}</h4>
+        <img width="100" src="{{ 'http://localhost:8000/storage/'.$user->avatar }}" alt="">
+
+        <a href="{{ route('users.show', $user->id) }}">Visualizar</a>
+
+    @endForeach
+
+@endSection

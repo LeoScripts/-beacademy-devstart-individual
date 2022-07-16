@@ -1,13 +1,19 @@
+@extends('template.index')
+@section('title', 'Listagem de Usuarios')
+@section('main')
+
 <h1>Show</h1>
 
 <p>{{ $user->id }}</p>
 <h4>{{ $user->name }}</h4>
+<img class="rounded mx-auto d-block" width="200" src="{{ 'http://localhost:8000/storage/'.$user->avatar }}" alt="">
 
 
-<a href="{{ route('users.edit', $user->id) }}">Editar</a>
-<form action="{{ route('users.destroy', $user->id) }}" method="post">
+<a class="btn btn-warning" href="{{ route('users.edit', $user->id) }}">Editar</a>
+<form  action="{{ route('users.destroy', $user->id) }}" method="post">
     @method('DELETE')
     @csrf
-    <button type="submit">Excluir</button>
+    <button class="btn btn-danger" type="submit">Excluir</button>
 </form>
 
+@endSection
