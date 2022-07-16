@@ -49,7 +49,7 @@ Crud of users with authentication, project full stack using framework Php Larave
 ## :sparkles: Features ##
 
 - [X] PHP using Laravel
-- [ ] Authentication
+- [X] Authentication
 - [X] Use Mysql 
 - [X] Use Docker
 - [X] 10 attributes
