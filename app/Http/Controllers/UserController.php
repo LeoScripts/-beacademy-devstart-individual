@@ -29,7 +29,9 @@ class UserController extends Controller
         $data = $request->all();
         $data['password'] = bcrypt($request->password);
 
-        if($request->avatar){
+        if(!$request->avatar){
+            $data['avatar'] = 'public/storage/profile/avatar.png';
+        }else{
             $file = $request['avatar'];
             $path = $file->store('profile','public');
             $data['avatar'] = $path;
@@ -49,12 +51,13 @@ class UserController extends Controller
 
     public function update(StoreUpdateUserFormRequest $request, $id)
     {
-        if(!$user = $this->model->find($id))
-            return redirect()->route('users.index');
-
         $data = $request->all();
+        if(!$user = $this->model->find($id)){
+            return redirect()->route('users.index');
+        }
+
         if($request->avatar){
-            Storage::delete($user->avatar);
+            Storage::delete('public/'.$user['avatar']);
             $file = $request['avatar'];
             $path = $file->store('profile','public');
             $data['avatar'] = $path;
