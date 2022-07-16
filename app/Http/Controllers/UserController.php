@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\StoreUpdateUserFormRequest;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -51,11 +52,17 @@ class UserController extends Controller
         if(!$user = $this->model->find($id))
             return redirect()->route('users.index');
 
-        $data = $request->only('name','email');
+        $data = $request->all();
+        if($request->avatar){
+            Storage::delete($user->avatar);
+            $file = $request['avatar'];
+            $path = $file->store('profile','public');
+            $data['avatar'] = $path;
+        }
         if($request->password)
             $data['password'] = bcrypt($request->password);
 
         $user->update($data);
-        return redirect("/users/{$id}/edit");
+        return redirect()->route('users.edit', ['id' => $id]);
     }
 }

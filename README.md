@@ -48,9 +48,10 @@
 Crud of users with authentication, project full stack using framework Php Laravel
 ## :sparkles: Features ##
 
-- [X] In PHP using Laravel
+- [X] PHP using Laravel
 - [ ] Authentication
 - [X] Use Mysql 
+- [X] Use Docker
 - [X] 10 attributes
 - [X] The CRUD must contain the 
     - [X] Insert, 
