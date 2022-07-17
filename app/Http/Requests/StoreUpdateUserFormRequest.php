@@ -26,6 +26,7 @@ class StoreUpdateUserFormRequest extends FormRequest
     {
         $id = $this->id ?? '';
         $rules = [
+            'avatar' => 'nullable',
             'name' => 'required|string|max:50|min:3',
             'email' => 'required|email|unique:users,email,{$id},id',
             'cpf' => 'required|string|max:11|min:11',

@@ -20,8 +20,16 @@ class UserFactory extends Factory
         return [
             'name' => fake()->name(),
             'email' => fake()->safeEmail(),
+            'avatar' => fake()->imageUrl(),
+            'birthDate' => fake()->date(),
+            'cpf' => '12345678912',
+            'phone' => '98991999999',
+            'profession' => 'trabalhador',
+            'formation' => 'ensino superior',
+            'address' => fake()->streetName(),
+            'isAdmin' => '0',
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'password' => '123456',
             'remember_token' => Str::random(10),
         ];
     }
