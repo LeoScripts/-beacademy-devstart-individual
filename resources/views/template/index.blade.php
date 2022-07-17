@@ -18,7 +18,7 @@
        <nav class="d-flex gap-3 ">
             @if(Auth::user())
                 @if(Auth::user()->isAdmin == 1)
-                    <a class="btn " href="{{ route('users.index') }}">Novo Usuario</a>
+                    <a class="btn " href="{{ route('users.create') }}">Novo Usuario</a>
                     <a class="btn" href="{{ route('users.index') }}">Dashboard</a>
                 @endif
                 <a class="btn" href="{{ route('users.show', Auth::user()->id) }}">{{ Auth::user()->name }}</a>
