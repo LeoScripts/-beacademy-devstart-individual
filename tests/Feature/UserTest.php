@@ -31,4 +31,16 @@ class UserTest extends TestCase
         $response = $this->get("/users/$user->id");
         $response->assertStatus(200);
     }
+
+    public function test_user_edit()
+    {
+        $user = User::factory()->create();
+        $response = $this->post('/login', [
+            'email' => $user->email,
+            'password' => '123456',
+        ]);
+        $this->actingAs($user);
+        $response = $this->get("/users/$user->id/edit");
+        $response->assertStatus(200);
+    }
 }
