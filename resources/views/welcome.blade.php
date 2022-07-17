@@ -36,6 +36,12 @@
                 </button>
             </div>
         </div>
+        <h2 class="mt-5 text-center alert alert-info">Gestao Completa de Usuarios</h2>
+        <div class="d-flex justify-content-center mt-4 gap-5">
+            <img width="30%" class="rounded" src="https://praxent.com/wp-content/uploads/2019/06/hybridmobileappdev.jpg" alt="">
+            <img width="30%" class="rounded" src="https://mir-s3-cdn-cf.behance.net/projects/404/8e1f56137097969.Y3JvcCwxMTgyLDkyNSwxMDgsMA.jpg" alt="">
+            <img width="30%" class="rounded" src="https://www.nolar.com.br/wp-content/uploads/2021/03/rescisao_comum_acordo-e1614886835710.jpeg" alt="">
+        </div>
 
 
 </main>
