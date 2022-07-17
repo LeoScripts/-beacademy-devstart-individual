@@ -22,7 +22,7 @@
                     <div class="carousel-item" data-bs-interval="3000">
                     <img width="800" height="250" src="https://png.pngtree.com/illustration/20190226/ourlarge/pngtree-technology-2-5d-gradient-computer-image_12003.jpg" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item" data-bs-interval="3000">
+                    <div class="carousel-item" s>
                     <img width="800" height="250" src="https://res.cloudinary.com/people-matters/image/upload/fl_immutable_cache,w_624,h_351,w_624,h_351,c_scale/v1393497517/2313.jpg" class="d-block w-100" alt="...">
                     </div>
                 </div>

@@ -1,24 +1,25 @@
 @extends('template.index')
 @section('title', 'Listagem de Usuarios')
 @section('main')
-<h1 class="text-center">{{ $user->name }}</h1>
 
-    @if($errors->any())
-        <div >
-            @foreach($errors->all() as $error)
-                {{ $error }}
-                <br>
-            @endForeach
-        </div>
-    @endIf
+<h1 class="text-center">Editar Usuario</h1>
+@if($errors->any())
+<div >
+    @foreach($errors->all() as $error)
+    {{ $error }}
+    <br>
+    @endForeach
+</div>
+@endIf
 
-    <form action="{{ route('users.update', $user->id) }}" method="post" enctype= multipart/form-data>
-        @method('PUT')
-        @csrf
+<form action="{{ route('users.update', $user->id) }}" method="post" enctype= multipart/form-data>
+@method('PUT')
+@csrf
 
         <div class="mb-3">
-            <img width="100" src="{{ 'http://localhost:8000/storage/'.$user->avatar }}" alt=""> <br>
-            <input type="file" name="avatar" id="avatar" class="form-control form control-md">
+            <img width="97" height="100"  class="rounded-circle mx-auto d-block p-2" src="{{ 'http://localhost:8000/storage/'.$user->avatar }}" alt=""> <br>
+            <label for="avatar" class="form-label">Imagem</label>
+            <input style="" type="file" name="avatar" id="avatar" class="form-control form control-md" placeholder="Selecione">
         </div>
         <div class="mb-3">
           <label for="name" class="form-label">Nome</label>
