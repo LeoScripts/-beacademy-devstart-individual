@@ -27,7 +27,7 @@ class UserFactory extends Factory
             'profession' => 'trabalhador',
             'formation' => 'ensino superior',
             'address' => fake()->streetName(),
-            'isAdmin' => '0',
+            'isAdmin' => '1',
             'email_verified_at' => now(),
             'password' => '123456',
             'remember_token' => Str::random(10),
