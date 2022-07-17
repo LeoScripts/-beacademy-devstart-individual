@@ -26,10 +26,6 @@ class StoreUpdateUserFormRequest extends FormRequest
     {
         $id = $this->id ?? '';
         $rules = [
-            'avatar' => [
-                'required',
-                'file'
-            ],
             'name' => 'required|string|max:50|min:3',
             'email' => 'required|email|unique:users,email,{$id},id',
             'cpf' => 'required|string|max:11|min:11',
@@ -47,10 +43,6 @@ class StoreUpdateUserFormRequest extends FormRequest
             $rules ['email'] = [
                 'required',
                 'email'
-            ];
-
-            $rules ['avatar'] = [
-                'nullable'
             ];
         }
 
