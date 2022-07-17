@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Http\Requests\StoreUpdateUserFormRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
+use App\Exceptions\UserControllerException;
 
 class UserController extends Controller
 {
@@ -24,10 +25,12 @@ class UserController extends Controller
     public function show($id)
     {
         $user =  User::find($id);
-        if(!$user == Auth::user()->id){
-            return redirect()->route('users.index');
+
+        if($user){
+            return view('users.show', compact('user'));
+        }else{
+            throw new UserControllerException('Usuario não encontrado');
         }
-        return view('users.show', compact('user'));
     }
 
     public function create( )
