@@ -4,7 +4,7 @@
     <h1 class="text-center">Novo Usuario</h1>
 
     @if($errors->any())
-        <div >
+        <div class="alert alert-danger">
             @foreach($errors->all() as $error)
                 {{ $error }}
                 <br>
