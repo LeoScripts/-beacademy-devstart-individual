@@ -66,7 +66,9 @@ class UserController extends Controller
             return redirect()->route('users.index');
         }
         if($request->avatar){
-            Storage::delete('public/'.$user['avatar']);
+            if($user['avatar'] !== 'profile/avatar.png')
+                Storage::delete('public/'.$user['avatar']);
+
             $file = $request['avatar'];
             $path = $file->store('profile','public');
             $data['avatar'] = $path;
