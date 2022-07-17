@@ -26,6 +26,12 @@ class UserTest extends TestCase
         $response->assertStatus(302);
     }
 
+    public function test_redirect_can_not_page_for_exception()
+    {
+        $response = $this->get('/u');
+        $response->assertStatus(200);
+    }
+
     public function test_user_rendered_show()
     {
         $user = User::factory()->create();
