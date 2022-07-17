@@ -48,7 +48,7 @@ class UserController extends Controller
             $data['avatar'] = $path;
         }
         $this->model->create($data);
-        return redirect('/login');
+        return redirect()->route('index')->with('create', 'Usuario criado com sucesso');
     }
 
     public function edit($id)
@@ -75,7 +75,7 @@ class UserController extends Controller
             $data['password'] = bcrypt($request->password);
 
         $user->update($data);
-        return redirect()->route('users.show', ['id' => $id]);
+        return redirect()->route('users.show', ['id' => $id])->with('edit', 'Usuario atualizado com sucesso');
     }
 
     public function destroy($id)
@@ -87,7 +87,7 @@ class UserController extends Controller
         if($user['avatar'] !== 'profile/avatar.png')
             Storage::delete('public/'.$user['avatar']);
 
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('destroy', 'Usuario removido com sucesso');;
     }
 
 }
