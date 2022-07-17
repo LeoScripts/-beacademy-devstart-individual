@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\StoreUpdateUserFormRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -23,7 +24,7 @@ class UserController extends Controller
     public function show($id)
     {
         $user =  User::find($id);
-        if(!$user){
+        if(!$user == Auth::user()->id){
             return redirect()->route('users.index');
         }
         return view('users.show', compact('user'));
@@ -47,7 +48,7 @@ class UserController extends Controller
             $data['avatar'] = $path;
         }
         $this->model->create($data);
-        return redirect()->route('users.create');
+        return redirect('/login');
     }
 
     public function edit($id)
@@ -74,7 +75,7 @@ class UserController extends Controller
             $data['password'] = bcrypt($request->password);
 
         $user->update($data);
-        return redirect()->route('users.edit', ['id' => $id]);
+        return redirect()->route('users.show', ['id' => $id]);
     }
 
     public function destroy($id)
