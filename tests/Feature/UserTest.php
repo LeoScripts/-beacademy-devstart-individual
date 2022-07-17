@@ -20,7 +20,13 @@ class UserTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_user_show()
+    public function test_redirect_can_not_user_for_exception()
+    {
+        $response = $this->get('/users/asdf');
+        $response->assertStatus(302);
+    }
+
+    public function test_user_rendered_show()
     {
         $user = User::factory()->create();
         $response = $this->post('/login', [
@@ -32,7 +38,7 @@ class UserTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_user_edit()
+    public function test_rendered_view_user_edit()
     {
         $user = User::factory()->create();
         $response = $this->post('/login', [
@@ -41,6 +47,18 @@ class UserTest extends TestCase
         ]);
         $this->actingAs($user);
         $response = $this->get("/users/$user->id/edit");
+        $response->assertStatus(200);
+    }
+
+    public function test_rendered_view_users_all()
+    {
+        $user = User::factory()->create();
+        $response = $this->post('/login', [
+            'email' => $user->email,
+            'password' => '123456'
+        ]);
+        $this->actingAs($user);
+        $response = $this->get("/users");
         $response->assertStatus(200);
     }
 }
