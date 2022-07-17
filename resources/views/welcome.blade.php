@@ -2,18 +2,9 @@
 @section('title', 'Listagem de Usuarios')
 @section('main')
     <main class="antialiased">
-        <h1 align='center'>
-            Seja Bem Vindo ao
-            <strong style='
-                background: #1995;
-                padding: 1rem;
-                border-radius: 0.5rem;
-            '>
-                Person-System
-            </strong>
-        </h1>
 
-        <div class="mt-5">
+
+        <div class="mt-2">
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div  class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="3000">
