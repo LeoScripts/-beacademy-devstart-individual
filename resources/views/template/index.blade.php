@@ -18,12 +18,13 @@
        <nav class="d-flex gap-3 ">
             @if(Auth::user())
                 @if(Auth::user()->isAdmin == 1)
-                    <a class="nav-link" href="{{ route('users.index') }}">dashboard</a>
+                    <a class="btn " href="{{ route('users.index') }}">Novo Usuario</a>
+                    <a class="btn" href="{{ route('users.index') }}">Dashboard</a>
                 @endif
-                <a class="nav-link" href="{{ route('users.show', Auth::user()->id) }}">{{ Auth::user()->name }}</a>
+                <a class="btn" href="{{ route('users.show', Auth::user()->id) }}">{{ Auth::user()->name }}</a>
                 <form action="{{ route('logout') }}" method="post">
                     @csrf
-                    <button type="submit">sair</button>
+                    <button class="btn btn-outline-danger" type="submit">sair</button>
                 </form>
             @else
                 <a class="nav-link" href="{{ route('login') }}">Entrar</a>
@@ -31,6 +32,25 @@
             @endif
        </nav>
     </header>
+
+        @if(session()->has('create'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{ session()->get('create') }}.</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if(session()->has('edit'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>{{ session()->get('edit') }}.</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+        @if(session()->has('destroy'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>{{ session()->get('destroy') }}.</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
 
     @yield('main')
 

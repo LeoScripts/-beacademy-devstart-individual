@@ -4,6 +4,7 @@
 
 
     <h1 class="text-center ">Listagem de Usuarios</h1>
+
     <div class="d-flex justify-content-center">
         <table class="table table-striped">
             <thead class="bg-info text-center">

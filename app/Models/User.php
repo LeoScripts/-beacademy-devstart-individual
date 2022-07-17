@@ -26,6 +26,7 @@ class User extends Authenticatable
         'phone',
         'profession',
         'formation',
+        'password',
         'address',
         'email_verified_at'
 
