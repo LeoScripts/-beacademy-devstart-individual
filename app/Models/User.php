@@ -27,9 +27,6 @@ class User extends Authenticatable
         'profession',
         'formation',
         'address',
-        'password',
-        'is_admin',
-        'remember_token',
         'email_verified_at'
 
     ];
