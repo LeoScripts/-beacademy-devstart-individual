@@ -18,13 +18,6 @@ class RegistrationTest extends TestCase
     public function test_new_users_can_register()
     {
         $user = User::factory()->create();
-        $response = $this->post('/users/create', [
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-            'cpf' => '12345687912',
-            'password' => 'password',
-        ]);
-
         $this->actingAs($user);
         $response = $this->get('/users');
         $response->assertStatus(200);
