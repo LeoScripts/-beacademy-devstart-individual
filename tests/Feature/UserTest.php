@@ -21,6 +21,18 @@ class UserTest extends TestCase
         $response = $this->get('/');
         $response->assertStatus(200);
     }
+
+    public function test_rendered_view_welcome()
+    {
+        $response = $this->get(route('index'));
+        $response->assertViewIs('welcome');
+    }
+
+    public function test_rendered_view_login()
+    {
+        $response = $this->get(route('login'));
+        $response->assertViewHas('login');
+    }
     public function test_user_rendered_show()
     {
         $user = User::factory()->create();
