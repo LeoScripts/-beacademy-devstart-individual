@@ -6,6 +6,8 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
+use PhpParser\Node\Stmt\Throw_;
+use App\Exceptions\UserControllerException;
 
 class UserTest extends TestCase
 {
@@ -19,19 +21,6 @@ class UserTest extends TestCase
         $response = $this->get('/');
         $response->assertStatus(200);
     }
-
-    public function test_redirect_can_not_user_for_exception()
-    {
-        $response = $this->get('/users/asdf');
-        $response->assertStatus(302);
-    }
-
-    public function test_redirect_can_not_page_for_exception()
-    {
-        $response = $this->get('/u');
-        $response->assertStatus(200);
-    }
-
     public function test_user_rendered_show()
     {
         $user = User::factory()->create();
@@ -64,7 +53,23 @@ class UserTest extends TestCase
             'password' => '123456'
         ]);
         $this->actingAs($user);
-        $response = $this->get("/users");
+        $response = $this->get("/users/$user->id");
+        $response->assertStatus(200);
+    }
+
+    public function test_method_edi_user()
+    {
+        $user = User::factory()->create();
+        $this->post('/login', [
+            'email' => $user->email,
+            'password' => '123456'
+        ]);
+        $this->actingAs($user);
+        $response = $this->put("/users/$user->id", [
+            'email' => $user->email,
+            'password' => '123455'
+        ]);
+        $response = $this->get("/users/$user->id");
         $response->assertStatus(200);
     }
 }
