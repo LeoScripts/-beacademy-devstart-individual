@@ -26,7 +26,7 @@ class RegistrationTest extends TestCase
         ]);
 
         $this->actingAs($user);
-        $response = $this->get('/users/create');
+        $response = $this->get('/users');
         $response->assertStatus(200);
     }
 }
