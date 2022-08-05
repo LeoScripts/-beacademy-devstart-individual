@@ -60,7 +60,7 @@ Crud of users with authentication, project full stack using framework Php Larave
     - [X] Read 
 - [X] Web page,
 - [X] Frontend that communicates with the backend
-- [ ] must have at least 30% unit tests
+- [X] must have at least 30% unit tests
 - [X] Stored in the github repository
 
 
