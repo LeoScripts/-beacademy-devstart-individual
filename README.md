@@ -1,12 +1,12 @@
 <div align="center" id="top"> 
-  <!-- <img src="./.github/app.gif" alt="Beacademy Devstart Individual" /> -->
+  <!-- <img src="./.github/app.gif" alt="" /> -->
 
   &#xa0;
 
   <!-- <a href="https://beacademydevstartindividual.netlify.app">Demo</a> -->
 </div>
 
-<h1 align="center">Beacademy Devstart Person-System</h1>
+<h1 align="center">Person-System</h1>
 
 <p align="center">
   <img alt="Github top language" src="https://img.shields.io/github/languages/top/LeoScripts/beacademy-devstart-person-system?color=56BEB8">
