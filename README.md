@@ -84,7 +84,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com), [
 $ git clone https://github.com/LeoScripts/person-system
 
 # Access
-$ cd beacademy-devstart-person-system
+$ cd person-system
 
 # modify file .env.example to .env and insert to credentials with database name in environments
 
